@@ -1,14 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-
-
-struct STUDENT_DATA {
-	std::string firstName;
-	std::string lastName;
-};
-
 
 #include <iostream>
 #include <fstream>
@@ -41,6 +30,8 @@ int main() {
             std::cout << student.firstName << " " << student.lastName << std::endl;
         }
     #endif
+
+
 
 
     inputFile.close();
