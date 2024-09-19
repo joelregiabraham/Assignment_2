@@ -34,6 +34,14 @@ int main() {
             students.push_back(student);
         }
     }
+        // DEBUG mode: Print student data to the console
+    #ifdef _DEBUG
+        std::cout << "Running in DEBUG mode.\n";
+        for (const auto& student : students) {
+            std::cout << student.firstName << " " << student.lastName << std::endl;
+        }
+    #endif
+
 
     inputFile.close();
     return 0;
