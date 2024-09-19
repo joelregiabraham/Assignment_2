@@ -10,6 +10,8 @@ struct STUDENT_DATA {
 };
 
 int main() {
+
+
     std::vector<STUDENT_DATA> students;
     std::ifstream inputFile("StudentData.txt");
     std::string line;
@@ -33,6 +35,17 @@ int main() {
 
 
         //
+    #ifdef PRE_RELEASE
+            std::cout << "Running Pre-Release version\n";
+            std::ifstream emailFile("StudentData_Emails.txt");
+            std::string email;
+            for (size_t i = 0; i < students.size() && std::getline(emailFile, email); ++i) {
+                std::cout << students[i].firstName << " " << students[i].lastName << ": " << email << std::endl;
+            }
+    #else
+            std::cout << "Running Standard version\n";
+    #endif
+
 
     inputFile.close();
     return 0;
